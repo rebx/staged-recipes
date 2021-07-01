@@ -1,0 +1,43 @@
+{% set name = "memorised" %}
+{% set version = "1.1.0" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a2cb90e04e614a7002f6948d9e54fa3641d2dc5fa70391c128d0df361cc03ce8
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - ez_setup
+    - pip
+    - python
+  run:
+    - python
+    - python3-memcached
+
+test:
+  imports:
+    - memorised
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://pypi.org/project/memorised/
+  summary: memcache memoization decorators and utils for python
+  license: BSD-Protection
+  license_file: PLEASE_ADD_LICENSE_FILE
+
+extra:
+  recipe-maintainers:
+    - rebx
