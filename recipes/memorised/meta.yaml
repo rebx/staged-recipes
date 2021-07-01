@@ -33,10 +33,10 @@ test:
     - pip
 
 about:
-  home: https://pypi.org/project/memorised/
+  home: https://github.com/1stvamp/memorised/
   summary: memcache memoization decorators and utils for python
   license: BSD-Protection
-  license_file: PLEASE_ADD_LICENSE_FILE
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
