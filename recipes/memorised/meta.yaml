@@ -19,9 +19,9 @@ requirements:
   host:
     - ez_setup
     - pip
-    - python
+    - python >= 2.7
   run:
-    - python
+    - python >= 2.7
     - python3-memcached
 
 test:
